@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.businessmember.BusinessMemberService">
+<!--  사업자 등록번호 중복검사  -->
+<insert id="businessinsert"> insert into DATECOCKBUSINESSMEMBER values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6}) </insert>
+<!--  사업자명과 이메일이 db에 있는지 검사 - 사업자 등록번호 찾기  -->
+<select id="businessnumbercheck" resultType="int"> select count(*) from DATECOCKBUSINESSMEMBER where businessnumber = #{param1} </select>
+<!--   사업자번호, pw찾기    -->
+<select id="findMemberId" resultType="com.mbc.datecock.businessmember.BusinessMemberDTO"> SELECT * FROM DATECOCKBUSINESSMEMBER WHERE BUSINESSNAME = #{param1} AND EMAIL = #{param2} </select>
+<!--  이거 없어도 되는건가?  -->
+<select id="pwdcheck" resultType="com.mbc.datecock.businessmember.BusinessMemberDTO"> select count(*) from DATECOCKBUSINESSMEMBER where businessnumber = #{businessnumber} and businessname = #{businessname} and email = #{email} </select>
+<!--   사업자등록번호 존재 여부 확인   -->
+<select id="samebusinessnumber" resultType="int"> SELECT COUNT(*) FROM DATECOCKBUSINESSMEMBER WHERE BUSINESSNUMBER = #{businessnumber} </select>
+<!--   사업자등록번호 + 이메일 일치 여부 확인   -->
+<select id="checkEmailMatch" parameterType="com.mbc.datecock.businessmember.BusinessMemberDTO" resultType="int"> SELECT COUNT(*) FROM DATECOCKBUSINESSMEMBER WHERE BUSINESSNUMBER = #{businessnumber} AND email = #{email} </select>
+<!--   임시 비밀번호 업데이트   -->
+<update id="updateTempPassword" parameterType="com.mbc.datecock.businessmember.BusinessMemberDTO"> UPDATE DATECOCKBUSINESSMEMBER SET password = #{password} WHERE BUSINESSNUMBER = #{businessnumber} </update>
+</mapper>

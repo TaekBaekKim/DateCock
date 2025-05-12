@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.mbc.datecock.member.MemberService">
+<select id="idcheck" resultType="int"> select count(*) from DATECOCKMEMBER where id = #{param1} </select>
+<insert id="insertm"> insert into DATECOCKMEMBER values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7}) </insert>
+<select id="findMemberId" resultType="java.lang.String" parameterType="com.mbc.datecock.member.MemberDTO"> SELECT id FROM DATECOCKMEMBER WHERE name = #{searchname} AND email = #{searchemail} </select>
+<select id="checkMemberOk" parameterType="map" resultType="int"> SELECT COUNT(*) FROM DATECOCKMEMBER WHERE ID = #{id} AND EMAIL = #{email} </select>
+<update id="updatePassword" parameterType="map"> UPDATE DATECOCKMEMBER /* 실제 테이블 이름 확인! */ SET PASSWORD = #{newPwd} /* 실제 비밀번호 컬럼명(PASSWORD?) 확인! (해시된 값 저장) */ WHERE ID = #{id} /* 실제 ID 컬럼명 확인! */ </update>
+</mapper>
+

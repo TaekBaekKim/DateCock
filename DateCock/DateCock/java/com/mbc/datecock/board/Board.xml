@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.board.mapper.BoardMapper">
+<sql id="searchCondition">
+        <if test="searchType != null and keyword != null and keyword != ''">
+            <choose>
+                <when test="searchType == 't'.toString()"> AND title LIKE '%' || #{keyword} || '%'
+                </when>
+                <when test="searchType == 'c'.toString()">
+                    AND content LIKE '%' || #{keyword} || '%'
+                </when>
+                <when test="searchType == 'w'.toString()">
+                    AND writer LIKE '%' || #{keyword} || '%'
+                </when>
+                <when test="searchType == 'tc'.toString()">
+                    AND (title LIKE '%' || #{keyword} || '%' OR content LIKE '%' || #{keyword} || '%')
+                </when>
+                </choose>
+        </if>
+    </sql>
+
+<select id="listPage" parameterType="com.mbc.datecock.board.PageDTO" resultType="com.mbc.datecock.board.BoardDTO">
+    SELECT bno, title, writer, regdate, viewcnt, likecnt, thumbnail, content, replycnt FROM (
+            SELECT /*+INDEX_DESC(board pk_board_bno)*/
+                   t.*, ROWNUM as rnum
+            FROM (
+                SELECT bno, title, writer, regdate, viewcnt, likecnt, thumbnail, content, replycnt
+                FROM board
+                WHERE 1=1 <include refid="searchCondition"></include> ORDER BY bno DESC
+            ) t
+            WHERE <![CDATA[ ROWNUM <= #{end} ]]>
+        )
+        WHERE rnum >= #{start} 
+        </select>
+        
+        
+ <select id="getTotalBoardCount" parameterType="com.mbc.datecock.board.PageDTO" resultType="int">
+        SELECT count(*)
+        FROM board
+        WHERE 1=1
+        <include refid="searchCondition"></include> 
+  </select>
+        
+        
+   
+<insert id="insertBoard" parameterType="com.mbc.datecock.board.BoardDTO"> INSERT INTO board ( bno, title, content, writer, thumbnail ) VALUES ( seq_board_bno.nextval, #{title, jdbcType=VARCHAR}, #{content, jdbcType=CLOB}, #{writer, jdbcType=VARCHAR}, #{thumbnail, jdbcType=VARCHAR} ) </insert>
+<update id="increaseViewCnt" parameterType="int"> update board set viewcnt = viewcnt +1 where bno = #{bno} </update>
+<select id="getDetail" parameterType="int" resultType="com.mbc.datecock.board.BoardDTO"> select bno, title, content, writer, regdate, viewcnt, replycnt, likecnt, thumbnail from board where bno = #{bno} </select>
+<update id="updateReplyCnt" parameterType="map"> 
+UPDATE board
+SET replycnt = CASE
+		 WHEN <![CDATA[ replycnt + #{amount} <= 0 ]]> THEN 0  -- ★★★ CDATA로 감싸기 ★★★
+		 ELSE replycnt + #{amount}  			 --그렇지 않으면 계산 결과 그대로
+  	END 
+WHERE bno = #{bno}
+</update>
+<update id="increaseLikeCnt" parameterType="int">
+    UPDATE board
+    SET likecnt = likecnt + 1
+    WHERE bno = #{bno}
+</update>
+
+<select id="getLikeCnt" parameterType="int" resultType="Integer"> SELECT likecnt
+    FROM board
+    WHERE bno = #{bno}
+</select>
+
+
+<delete id="deleteBoard" parameterType="int">
+        DELETE FROM board WHERE bno = #{bno}
+</delete>
+
+ <update id="updateBoard" parameterType="com.mbc.datecock.board.BoardDTO">
+        UPDATE board
+           SET title = #{title},
+               content = #{content}
+               <if test="thumbnail != null"> , thumbnail = #{thumbnail} </if> 
+         WHERE bno = #{bno}
+</update>
+
+
+</mapper>

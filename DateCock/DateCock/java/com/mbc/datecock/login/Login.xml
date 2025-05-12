@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.login.LoginService">
+<select id="pwselect" resultType="String"> SELECT PASSWORD FROM DATECOCKMEMBER WHERE ID = #{id} </select>
+<select id="nameselect" resultType="String">
+select name from DATECOCKMEMBER where id =#{param1}
+</select>
+
+<select id="getAdminStatus" parameterType="string" resultType="Integer"> SELECT ADMIN FROM DATECOCKMEMBER WHERE ID = #{id} </select>
+</mapper>
+
+

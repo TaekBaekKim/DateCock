@@ -1,0 +1,146 @@
+@charset "UTF-8";
+<!-- servlet-context.xml -->
+<mvc:resources mapping="/resources/**" location="/resources/" />
+/* 방명록 리스트 */
+.guestbook {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Nanum Gothic', sans-serif;
+  color: #333;
+}
+
+/* 댓글 전체 감싸는 컨테이너 */
+.guestbook-wrap {
+  max-width: 800px;
+  margin: 60px auto;  /* 페이지 중앙정렬 */
+  padding: 0 20px;
+}
+
+/* 입력 폼 간격 정리 */
+.guestbook-form {
+  margin-bottom: 30px;
+  padding: 24px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* 리스트는 바로 아래 */
+.guestbook-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guestbook-item {
+  border-top: 1px solid #e6e6e6;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.guestbook-item:last-child {
+  border-bottom: 1px solid #e6e6e6;
+}
+.guestbook-item .time {
+  margin-right: 12px;  /* 시간과 버튼 사이 간격 조절 */
+}
+
+.guestbook-item .btn-delete {
+  /* 예: margin-left: 8px; */
+}
+.name {
+  font-weight: 700;
+  color: #444;
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.memo {
+  flex: 1;
+  margin: 0 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.todays {
+  font-size: 0.85em;
+  color: #999;
+  white-space: nowrap;
+}
+
+/* AJAX 입력 폼 스타일 */
+.guestbook-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 900px;       /* 원하는 너비로 직접 조절 가능 */
+  max-width: 100%;    /* 화면이 작아지면 최대 화면 너비로 제한 */
+  margin: 0 auto;     /* 가운데 정렬 */
+}
+
+.guestbook-form textarea,
+.guestbook-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.guestbook-form textarea:focus,
+.guestbook-form input[type="text"]:focus {
+  border-color: #ff4f9a;
+  box-shadow: 0 0 0 3px rgba(255,79,154,0.15);
+  outline: none;
+}
+
+.guestbook-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-ajax-submit {
+  background: #ff4f9a;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background .3s;
+}
+
+.btn-ajax-submit:hover {
+  background: #e64589;
+}
+
+.btn-ajax-submit:active {
+  transform: scale(0.98);
+}
+
+/* 피드백 메시지 */
+.ajax-feedback {
+  font-size: 0.9em;
+  margin-top: 8px;
+  display: none;
+  color: #e64589;
+}
+
+.ajax-feedback.success {
+  color: #4caf50;
+  display: block;

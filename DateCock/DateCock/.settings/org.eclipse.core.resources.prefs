@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//java/com/mbc/datecock/board/PageDTO.java=UTF-8
+encoding//java/com/mbc/datecock/businesslogin/BusinessLoginController.java=UTF-8
+encoding//java/com/mbc/datecock/businessmember/BusinessMemberController.java=UTF-8
+encoding//java/com/mbc/datecock/datecourse/DatecourseController.java=UTF-8
+encoding//java/com/mbc/datecock/member/MemberController.java=UTF-8
+encoding//java/com/mbc/datecock/mypage/MypageController.java=UTF-8
+encoding//java/com/mbc/datecock/userqna/UserQnaBoardController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/datecourse/datereservation.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/datecourse/recommendation.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main.jsp=UTF-8

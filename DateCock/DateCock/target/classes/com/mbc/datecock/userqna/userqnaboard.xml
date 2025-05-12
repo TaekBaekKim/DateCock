@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.userqna.mapper.UserQnaBoardMapper">
+
+    <resultMap id="userQnaResultMap" type="com.mbc.datecock.userqna.UserQnaBoardDTO">
+        <id property="bno" column="bno"/> <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="writer" column="writer"/>
+        <result property="regdate" column="regdate"/>
+        <result property="viewcnt" column="viewcnt"/>
+        <result property="secret" column="secret"/>
+        <result property="answerStatus" column="answer_status"/>
+        <result property="answerContent" column="answer_content"/>
+        <result property="answerWriter" column="answer_writer"/>
+        <result property="answerDate" column="answer_date"/>
+       
+        <result property="imageFile" column="image_file"/>
+    </resultMap>
+    <sql id="searchCondition">
+        <if test="searchType != null and keyword != null and keyword != ''">
+            <choose>
+                <when test="searchType == 't'.toString()">AND title LIKE '%' || #{keyword} || '%'</when>
+                <when test="searchType == 'c'.toString()">AND content LIKE '%' || #{keyword} || '%'</when>
+                <when test="searchType == 'w'.toString()">AND writer LIKE '%' || #{keyword} || '%'</when>
+                <when test="searchType == 'tc'.toString()">AND (title LIKE '%' || #{keyword} || '%' OR content LIKE '%' || #{keyword} || '%')</when>
+            </choose>
+        </if>
+    </sql>
+
+   
+    <select id="listPage" parameterType="com.mbc.datecock.board.PageDTO" resultMap="userQnaResultMap">
+        SELECT bno, title, writer, regdate, viewcnt, secret, answer_status, image_file FROM (
+            SELECT /*+INDEX_DESC(user_qna_board pk_user_qna_board_bno)*/
+                   t.*, ROWNUM as rnum
+            FROM (
+                SELECT bno, title, writer, regdate, viewcnt, secret, answer_status, image_file FROM user_qna_board
+                WHERE 1=1
+                <include refid="searchCondition"/>
+                <if test="!admin"> AND (secret = 0 OR (secret = 1 AND writer = #{loginUserId}))
+                </if>
+                ORDER BY bno DESC
+            ) t
+            WHERE <![CDATA[ ROWNUM <= #{end} ]]>
+        )
+        WHERE rnum >= #{start}
+    </select>
+
+    <select id="getTotalCount" parameterType="com.mbc.datecock.board.PageDTO" resultType="int">
+        SELECT COUNT(*)
+        FROM user_qna_board
+        WHERE 1=1
+        <include refid="searchCondition"/>
+        <if test="!admin"> AND (secret = 0 OR (secret = 1 AND writer = #{loginUserId}))
+        </if>
+    </select>
+
+    <insert id="insert" parameterType="com.mbc.datecock.userqna.UserQnaBoardDTO">
+        INSERT INTO user_qna_board (
+            bno, title, content, writer, secret, image_file ) VALUES (
+            seq_user_qna_bno.nextval, #{title, jdbcType=VARCHAR},
+            #{content, jdbcType=CLOB},
+            #{writer, jdbcType=VARCHAR},
+            #{secret, jdbcType=INTEGER}, #{imageFile, jdbcType=VARCHAR} )
+    </insert>
+    
+    
+    
+    
+        
+    <select id="getDetail" parameterType="int" resultMap="userQnaResultMap">
+        SELECT bno, title, content, writer, regdate, viewcnt, secret,
+               answer_status, answer_content, answer_writer, answer_date,
+               image_file FROM user_qna_board
+        WHERE bno = #{bno}
+    </select>
+
+    <update id="increaseViewCnt" parameterType="int">
+        UPDATE user_qna_board
+        SET viewcnt = viewcnt + 1
+        WHERE bno = #{bno}
+    </update>
+    
+    <update id="update" parameterType="com.mbc.datecock.userqna.UserQnaBoardDTO">
+        UPDATE user_qna_board
+        SET title = #{title, jdbcType=VARCHAR},
+            content = #{content, jdbcType=CLOB},
+            secret = #{secret, jdbcType=INTEGER},
+            answer_status = '답변대기',
+            answer_content = NULL,
+            answer_writer = NULL,
+            answer_date = NULL
+            <if test="imageFile != null">
+                , image_file = #{imageFile, jdbcType=VARCHAR}
+            </if>
+            <if test="imageFile == null">
+                , image_file = NULL
+            </if>
+        WHERE bno = #{bno}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM user_qna_board
+        WHERE bno = #{bno}
+    </delete>
+
+    <update id="updateAnswer" parameterType="com.mbc.datecock.userqna.UserQnaBoardDTO">
+        UPDATE user_qna_board
+        SET answer_content = #{answerContent, jdbcType=CLOB},
+            answer_writer = #{answerWriter, jdbcType=VARCHAR},
+            answer_status = '답변완료',
+            answer_date = SYSDATE
+        WHERE bno = #{bno}
+    </update>
+
+</mapper>

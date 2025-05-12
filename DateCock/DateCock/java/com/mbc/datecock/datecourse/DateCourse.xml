@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.datecourse.DateCourseService"> 
+
+<select id="allselect" resultType="com.mbc.datecock.business.BusinessDTO">
+select * from DATECOCKBUSINESSINPUT 
+</select>
+<select id="select" resultType="com.mbc.datecock.member.MemberDTO">
+select * from DATECOCKMEMBER where name = #{param1, jdbcType=VARCHAR}
+</select>
+
+<insert id="insert">
+  insert into DATECOCKRESERVATION (reservation_id, name, phone, day, intime, businessname,id,image)
+  values (
+    reservation_seq.nextval,
+    #{param1},
+    #{param2, jdbcType=VARCHAR},
+    #{param3, jdbcType=DATE},
+    #{param4, jdbcType=VARCHAR},
+    #{param5},
+    #{param6},
+    #{param7}
+  )
+</insert>
+<select id="image" resultType="String">
+  SELECT image
+  FROM DATECOCKBUSINESSINPUT
+  WHERE businessname = #{param1}
+</select>
+
+<select id="bselect" resultType="com.mbc.datecock.business.BusinessDTO">
+select * from DATECOCKBUSINESSINPUT where businessname = #{param1}
+</select>
+
+<select id="reservationselect" resultType="com.mbc.datecock.datecourse.DateCourseDTO">
+select * from DATECOCKRESERVATION where businessname =#{param1}and day=#{param2}
+</select>
+
+<select id="mapaddress" resultType="com.mbc.datecock.business.BusinessDTO">
+select address from DATECOCKBUSINESSINPUT where businessname = #{param1}
+</select>
+
+<insert id="courseinsert"> insert into DATECOCKCONDITION values(#{param1},#{param2},#{param3})</insert>
+
+<select id="conditionselect" resultType="com.mbc.datecock.business.BusinessDTO">
+  select * from DATECOCKBUSINESSINPUT
+  where age = #{param1}
+    and zone = #{param2}
+    and activity = #{param3}
+</select>
+
+<!--  댓글 등록  -->
+<insert id="insertGuest" parameterType="com.mbc.datecock.datecourse.GuestDTO"> INSERT INTO DATECOCKGUEST (name, memo, todays) VALUES (#{name}, #{memo}, #{todays}) </insert>
+<!--  전체 댓글 불러오기  -->
+<select id="alltime" resultType="com.mbc.datecock.datecourse.GuestDTO"> SELECT name, memo, todays FROM DATECOCKGUEST ORDER BY todays ASC </select>
+<!--  댓글 삭제  -->
+<delete id="deleteGuest"> DELETE FROM DATECOCKGUEST WHERE name = #{name} AND todays = #{todays, jdbcType=TIMESTAMP} </delete>
+
+</mapper>
+

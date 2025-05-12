@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbc.datecock.mypage.MypageService">
+
+<!--  1. 회원 삭제  -->
+<delete id="businessinfodelete" parameterType="String"> DELETE FROM datecockbusinessmember WHERE businessnumber = #{businessnumber} </delete>
+<!-- 1-1 회원 삭제시 보여줄 이메일 -->
+<select id="getbusinessemail" resultType="String"> select businessnumber from datecockbusinessmember where businessnumber = #{businessnumber} </select>
+<!--  2. 회원 정보 조회 (수정용)  -->
+<select id="businessinfomodifyview" resultType="com.mbc.datecock.mypage.MypageDTO"> SELECT businessnumber,password, email, phone, businessname, birthyear FROM datecockbusinessmember WHERE businessnumber = #{businessnumber} </select>
+<!--  3. 회원 정보 수정  -->
+<update id="businessinfomodify" parameterType="com.mbc.datecock.mypage.MypageDTO"> UPDATE datecockbusinessmember SET businessname = #{businessname}, email = #{email}, phone = #{phone} WHERE businessnumber = #{businessnumber} </update>
+<!--  4. 현재 비밀번호 조회  -->
+<select id="getbusinesspw" parameterType="com.mbc.datecock.mypage.MypageDTO" resultType="String"> SELECT password FROM datecockbusinessmember WHERE businessnumber = #{param1} </select>
+<!--  5. 비밀번호 변경  -->
+<update id="businesspwmodify" parameterType="com.mbc.datecock.mypage.MypageDTO"> UPDATE datecockbusinessmember SET password = #{password} WHERE businessnumber = #{businessnumber} </update>
+<select id="select" resultType="com.mbc.datecock.datecourse.DateCourseDTO"> select * from DATECOCKRESERVATION where id = #{param1} order by day asc </select>
+<select id="businessinputselect" resultType="com.mbc.datecock.business.BusinessDTO"> select * from DATECOCKBUSINESSINPUT where businessname = #{param1} </select>
+<select id="datereservationselect" resultType="com.mbc.datecock.datecourse.DateCourseDTO"> select * from DATECOCKRESERVATION where id = #{param1} and businessname = #{param2} and day = #{param3} </select>
+<select id="businessinputview" resultType="com.mbc.datecock.business.BusinessDTO"> select * from DATECOCKBUSINESSINPUT where businessname = #{param1} </select>
+<delete id="datelistdelete" > delete from DATECOCKRESERVATION where name = #{param1} and day= #{param2} and businessname = #{param3} </delete>
+<!-- 1. 일반회원 회원탈퇴 -->
+<delete id="userinfodelete"> delete from datecockmember where id = #{param1} </delete>
+<!-- 1-1. 일반회원 회원탈퇴시 보여줄 이메일 -->
+<select id="getuseremail" resultType="String">select id from datecockmember where id = #{id}</select>
+<!-- 2. 일반회원 회원수정 view -->
+<select id="userinfomodifyview" parameterType="String" resultType="com.mbc.datecock.mypage.UsermypageDTO"> select id, password, email, name, birth, phone from datecockmember where id = #{param1} </select>
+<!-- 3. 일반회원 회원수정 -->
+<update id="userinfomodify"> update datecockmember set id = #{id}, name = #{name}, email = #{email}, phone = #{phone} where id = #{id} </update>
+<!-- 4. 일반회원 비밀번호 수정 - 현재 비밀번호 조회 -->
+<select id="getuserpw" parameterType="String" resultType="String"> SELECT password FROM datecockmember WHERE id = #{id} </select>
+<!-- 5. 일반회원 비밀번호 수정 -->
+<update id="userpwmodifyRaw" parameterType="map"> UPDATE datecockmember SET password = #{encodedNewPassword} WHERE id = #{id} </update>
+
+</mapper>

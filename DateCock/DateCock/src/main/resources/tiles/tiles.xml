@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+   <definition name="baseLayout" template="/WEB-INF/views/layout.jsp">
+      <put-attribute name="title" value=""/>
+      <put-attribute name="top" value="/WEB-INF/views/top.jsp"/>
+      <put-attribute name="body" value=""/>
+      <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+   </definition>
+   
+   
+   <definition name="servemain" extends="baseLayout">
+   <put-attribute name="title" value="서브메인" />
+   <put-attribute name="body" value="/WEB-INF/views/servemain/servemain.jsp"/>
+</definition>
+   
+
+<definition name="main" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/main.jsp"/>
+</definition>
+
+<definition name="game" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/game/game.jsp"/>
+</definition>
+
+<definition name="businessinput" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/business/businessinput.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="businessout" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/business/businessout.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="businessupdate" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/business/businessupdate.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="DateCocklog" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/DateCocklog.jsp"/>
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="signup" extends="blankLayout">
+<put-attribute name="title" value="회원가입"/>
+<put-attribute name="body" value="/WEB-INF/views/member/signup.jsp"/>
+</definition>
+
+<definition name="msearch" extends="blankLayout">
+<put-attribute name="title" value="회원가입"/>
+<put-attribute name="body" value="/WEB-INF/views/member/msearch.jsp"/>
+</definition>
+
+<definition name="idResult" extends="blankLayout">
+<put-attribute name="title" value="회원가입"/>
+<put-attribute name="body" value="/WEB-INF/views/member/idResult.jsp"/>
+</definition>
+
+<definition name="pwdResult" extends="blankLayout">
+<put-attribute name="title" value="패스워드찾기"/>
+<put-attribute name="body" value="/WEB-INF/views/member/pwdResult.jsp"/>
+</definition>
+
+<!-- 업데이트 인풋창 -->
+<definition name="businessupdate" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/business/businessupdate.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="businesssignup" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/businessmember/businesssignup.jsp"/>
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="businessresult" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/businessmember/businessresult.jsp"/>
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+
+<definition name="datecourseout" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/datecourse/datecourseout.jsp"/>
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="datereservation" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/datecourse/datereservation.jsp"/>
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="recommendation" template="/WEB-INF/views/layout.jsp">
+    <put-attribute name="title" value="홈페이지" />
+    <put-attribute name="top" value="/WEB-INF/views/top.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/datecourse/recommendation.jsp"/>
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+</definition>
+
+<definition name="recommendresult" template="/WEB-INF/views/recommendresult.jsp" />
+
+<definition name="blankLayout" template="/WEB-INF/views/blank_layout.jsp">
+<put-attribute name="title" value="DateCock"/>
+<put-attribute name="top" value="/WEB-INF/views/top.jsp"/>
+<put-attribute name="body" value=""/>
+<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+</definition>
+
+
+<definition name="businessqnalist" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/QnA/businessqnalist.jsp"/>
+</definition>
+
+<definition name="support" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/QnA/support.jsp"/>
+</definition>
+
+<definition name="supportfaq" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/QnA/supportfaq.jsp"/>
+</definition>
+
+<definition name="supportqna" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/QnA/supportqna.jsp"/>
+</definition>
+
+<definition name="userqnalist" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/QnA/userqnalist.jsp"/>
+</definition>
+
+<definition name="businessdelete" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/businessdelete.jsp"/>
+</definition>
+
+<definition name="businessmanual" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/businessmanual.jsp"/>
+</definition>
+
+<definition name="businessmodify" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/businessmodify.jsp"/>
+</definition>
+
+<definition name="businessmypage" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/businessmypage.jsp"/>
+</definition>
+
+<definition name="mypage" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/mypage.jsp"/>
+</definition>
+
+<definition name="businessnotice" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/businessnotice.jsp"/>
+</definition>
+
+<definition name="businesspwmodify" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/businesspwmodify.jsp"/>
+</definition>
+
+<definition name="datecoursedetails" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/datecoursedetails.jsp"/>
+</definition>
+
+<definition name="datelist" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/datelist.jsp"/>
+</definition>
+
+<definition name="userdelete" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/userdelete.jsp"/>
+</definition>
+
+<definition name="usermodify" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/usermodify.jsp"/>
+</definition>
+
+<definition name="userpwmodify" extends="baseLayout">
+<put-attribute name="title" value="메인화면"/>
+<put-attribute name="body" value="/WEB-INF/views/mypage/userpwmodify.jsp"/>
+</definition>
+
+<definition name="listup" extends="baseLayout">
+<put-attribute name="title" value="게시판"/>
+<put-attribute name="body" value="/WEB-INF/views/board/listup.jsp"/>
+</definition>
+
+<definition name="write" extends="baseLayout">
+<put-attribute name="title" value="게시판"/>
+<put-attribute name="body" value="/WEB-INF/views/board/write.jsp"/>
+</definition>
+
+<definition name="view" extends="blankLayout">
+<put-attribute name="title" value="게시판"/>
+<put-attribute name="body" value="/WEB-INF/views/board/view.jsp"/>
+</definition>
+
+<definition name="edit" extends="baseLayout">
+<put-attribute name="title" value="게시판수정"/>
+<put-attribute name="body" value="/WEB-INF/views/board/edit.jsp"/>
+</definition>
+
+<definition name="uqlist" extends="baseLayout">
+        <put-attribute name="title" value="고객 문의 목록"/>
+        <put-attribute name="body" value="/WEB-INF/views/userqna/uqlist.jsp"/>
+    </definition>
+
+<definition name="uqwrite" extends="baseLayout"> 
+    <put-attribute name="title" value="고객 문의 작성"/>
+    <put-attribute name="body" value="/WEB-INF/views/userqna/uqwrite.jsp"/>
+</definition>
+
+<definition name="uqview" extends="baseLayout"> 
+    <put-attribute name="title" value="고객 문의 상세"/>
+    <put-attribute name="body" value="/WEB-INF/views/userqna/uqview.jsp"/>
+</definition>
+
+<definition name="uqedit" extends="baseLayout">
+    <put-attribute name="title" value="고객 문의 수정"/>
+    <put-attribute name="body" value="/WEB-INF/views/userqna/uqedit.jsp"/>
+</definition>
+
+<definition name="bqlist" extends="baseLayout">
+    <put-attribute name="title" value="기업 문의 목록"/>
+    <put-attribute name="body" value="/WEB-INF/views/bizqna/bqlist.jsp"/>
+</definition>
+
+<definition name="bqwrite" extends="baseLayout">
+    <put-attribute name="title" value="기업 문의 작성"/>
+    <put-attribute name="body" value="/WEB-INF/views/bizqna/bqwrite.jsp"/>
+</definition>
+
+<definition name="bqview" extends="baseLayout">
+    <put-attribute name="title" value="기업 문의 상세"/>
+    <put-attribute name="body" value="/WEB-INF/views/bizqna/bqview.jsp"/>
+</definition>
+
+<definition name="bqedit" extends="baseLayout">
+    <put-attribute name="title" value="기업 문의 수정"/>
+    <put-attribute name="body" value="/WEB-INF/views/bizqna/bqedit.jsp"/>
+</definition>
+
+
+</tiles-definitions>

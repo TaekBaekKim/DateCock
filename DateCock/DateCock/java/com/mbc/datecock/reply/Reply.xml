@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.reply.mapper.ReplyMapper"> <select id="listByBno" parameterType="int" resultType="com.mbc.datecock.reply.ReplyDTO">
+        SELECT
+            rno, bno, replytext, replyer, replydate, updatedate
+        FROM
+            reply WHERE
+            bno = #{bno} ORDER BY rno ASC
+    </select>
+
+    <insert id="insert" parameterType="com.mbc.datecock.reply.ReplyDTO">
+        INSERT INTO reply ( rno, bno, replytext, replyer
+            ) VALUES (
+            seq_reply_rno.nextval, #{bno},       #{replytext}, #{replyer}    )
+        </insert>
+
+    <select id="read" parameterType="int" resultType="com.mbc.datecock.reply.ReplyDTO"> SELECT rno, bno, replytext, replyer, replydate, updatedate
+        FROM reply WHERE rno = #{rno}
+    </select>
+
+    <update id="update" parameterType="com.mbc.datecock.reply.ReplyDTO"> UPDATE reply SET
+            replytext = #{replytext}, updatedate = SYSTIMESTAMP
+        WHERE
+            rno = #{rno} </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM reply WHERE rno = #{rno}
+    </delete>
+	
+	<select id="getReply" parameterType="int" resultType="com.mbc.datecock.reply.ReplyDTO">
+    SELECT rno, bno, replytext, replyer, replydate, updatedate
+    FROM REPLY 
+    WHERE rno = #{rno} 
+</select>
+	
+    </mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.businesslogin.BusinessLoginService">
+<select id="pwselect" resultType="String"> select password from DATECOCKBUSINESSMEMBER where businessnumber = #{businessnumber} </select>
+<select id="nameselect" resultType="String">
+select businessname from DATECOCKBUSINESSMEMBER where businessnumber = #{param1}
+</select>
+</mapper>

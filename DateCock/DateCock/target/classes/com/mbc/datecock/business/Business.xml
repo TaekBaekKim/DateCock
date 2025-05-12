@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.datecock.business.BusinessService"><!-- 정보입력  -->
+<insert id="businessinsert">insert into DATECOCKBUSINESSINPUT
+values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10})</insert>
+
+<select id="businessselect" resultType="com.mbc.datecock.business.BusinessDTO"> <!-- 아웃출력  -->
+select * from DateCockbusinessinput where businessnumber = #{param1}
+</select>
+
+<select id="updateselect" resultType="com.mbc.datecock.business.BusinessDTO"> <!--업데이트(수정) 출력 -->
+select * from DateCockbusinessinput where businessnumber = #{param1}
+</select>
+<delete id="alldelete">
+delete from DateCockbusinessinput where businessnumber = #{param1}
+</delete>
+<update id="updategogogo">
+update DateCockbusinessinput set businessname=#{param1},address=#{param2},businesstime=#{param3},
+phone=#{param4},information=#{param5},age=#{param6},zone=#{param7},
+activity=#{param8} where businessnumber = #{param9}
+</update>
+
+<update id="updategogogogo">
+update DateCockbusinessinput set businessname=#{param1},address=#{param2},businesstime=#{param3},
+phone=#{param4},image=#{param5},information=#{param6},age=#{param7},
+zone=#{param8},activity=#{param9} where businessnumber = #{param10}
+
+</update>
+</mapper>
