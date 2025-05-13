@@ -517,14 +517,21 @@ public class BizQnaBoardController { // 클래스명 변경
         String adminId = (String) session.getAttribute("id"); // 관리자 ID
 
         boolean saveSuccess = false;
+        String qnaTitle = ""; // 제목을 담을 변수
         try {
-             saveSuccess = bizQnaService.saveAnswer(dto, adminId); // 서비스 메소드명, 파라미터 타입 변경
+            // 원본 게시글 정보 조회 (답변 저장 전에)
+            BizQnaBoardDTO originalDto = bizQnaService.getBizQnaForAuth(dto.getBno()); // 예시: 제목을 가져오기 위한 조회
+            if (originalDto != null) {
+                qnaTitle = originalDto.getTitle();
+            }
+            saveSuccess = bizQnaService.saveAnswer(dto, adminId);
         } catch (Exception e) {
             log.error("BizQnA 답변 저장 중 오류 발생 (bno: {})", dto.getBno(), e);
         }
 
         if (saveSuccess) {
-            rttr.addFlashAttribute("message", dto.getTitle() + "제목의 기업 문의글에 답변이 등록/수정되었습니다.");
+            // 조회한 title 사용
+            rttr.addFlashAttribute("message", "'" + qnaTitle + "' 제목의 기업 문의글에 답변이 등록/수정되었습니다.");
         } else {
             rttr.addFlashAttribute("errorMessage", "기업 문의글 답변 등록/수정에 실패했습니다.");
         }

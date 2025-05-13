@@ -166,12 +166,12 @@
     </c:choose>
 
     <%-- 에러/성공 메시지 표시 --%>
-    <c:if test="${not empty message}">
-        <div class="alert alert-success" role="alert" style="margin-top: 20px;">${message}</div>
-    </c:if>
-    <c:if test="${not empty errorMessage}">
-        <div class="alert alert-danger" role="alert" style="margin-top: 20px;">${errorMessage}</div>
-    </c:if>
+    <c:if test="${not empty message}">
+        <div id="rttrMessage" class="alert alert-success" role="alert" style="margin-top: 20px;">${message}</div>
+    </c:if>
+    <c:if test="${not empty errorMessage}">
+        <div id="rttrErrorMessage" class="alert alert-danger" role="alert" style="margin-top: 20px;">${errorMessage}</div>
+    </c:if>
 </div>
 
 <script type="text/javascript">
