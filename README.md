@@ -40,7 +40,7 @@ DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입
 ---
 
 ## <span style="color:#ff69b4">프로젝트 시연</span>  
-(./images/video-thumbnail.png)](https://drive.google.com/file/d/1q8t6X3UdNsFdWciBhmv8sGW_iLD7Po-r/view?usp=sharing)
+![시연 영상 보기](./images/video-thumbnail.png)](https://drive.google.com/file/d/1q8t6X3UdNsFdWciBhmv8sGW_iLD7Po-r/view?usp=sharing)
 
 ---
 
