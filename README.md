@@ -1,11 +1,7 @@
-<table>
-  <tr>
-    <th>
-      꾸미기
-    </th>
-    <td>
-      <img src="https://github.com/user-attachments/assets/75b130a6-5da4-48e9-889c-ba3151979901" width="100px">
-    </td>
+<h1 align="center" style="color: #ff69b4;">🌸 DateCock - 당신만의 데이트 코스를 찾아드립니다 🌸</h1>
+프로젝트 소개
+DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입니다.  
+연령대, 지역, 데이트 유형을 선택하면 알맞은 장소를 제안해주며, 예약·후기 기능까지 통합한 풀스택 데이트 추천 서비스 입니다.
 
-  </tr>
-</table>
+기획부터 개발까지 전 과정에 참여했으며, 특히 `Spring Boot 기반의 로그인/예약/후기 시스템`을 주도적으로 구현하였습니다.
+
