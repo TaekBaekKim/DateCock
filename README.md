@@ -1,9 +1,4 @@
 <h1 align="center" style="color: #ff69b4;">🌸 DateCock - 당신만의 데이트 코스를 찾아드립니다 🌸</h1>
-[![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-ff69b4?style=flat-square&logo=Spring&logoColor=white)](https://spring.io/projects/spring-boot)
-[![Thymeleaf](https://img.shields.io/badge/Frontend-Thymeleaf-f2acc4?style=flat-square)](https://www.thymeleaf.org/)
-[![MySQL](https://img.shields.io/badge/Database-MySQL-f9c5d1?style=flat-square&logo=MySQL&logoColor=white)](https://www.mysql.com/)
-[![Java](https://img.shields.io/badge/Language-Java%2017-f7a7b3?style=flat-square&logo=OpenJDK&logoColor=white)](https://openjdk.org/)
-
 프로젝트 소개
 
 DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입니다.  
@@ -31,8 +26,20 @@ DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입
 - PPT 자료 구성 및 발표 준비 진행
 
   프로젝트 시연
-  <img src=" ">
-  ![image](https://github.com/user-attachments/assets/08d605cc-a122-41ea-8d72-2bb9e3327de1)
+
+
+
+
+자세한 자료 ( 프로젝트 PPT )
+
+<a href="https://docs.google.com/presentation/d/1E1e6Xc0-W3po5hTQP3lTPNWMQsfQUEbN/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 👈바로 확인 가능한 ppt입니다.  </a>
+<a href="https://docs.google.com/presentation/d/1IQ77WxWi4wxQ2YoMAXzDGI15P80RNm8h/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 👈다운로드 후 자료를 GIF파일로 볼 수 있습니다.</a>
+
+
+연락처
+이름: 박동인  
+이메일: ehddls0318@gmail.com , ehddls147@naver.com
+
 
   
 
