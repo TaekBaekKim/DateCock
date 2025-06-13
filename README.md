@@ -1,5 +1,5 @@
 <h1 align="center" style="color:#ff69b4">💗 DateCock (Spring 기반)</h1>
-<p align="center"><strong>당신만의 데이트 코스를 찾아드립니다</strong></p>
+<p align="center"><strong>🌸당신만의 데이트 코스를 찾아드립니다</strong></p>
 
 ---
 
