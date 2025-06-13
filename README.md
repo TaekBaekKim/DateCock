@@ -1,4 +1,4 @@
-<h1 align="center" style="color: #ff69b4;">🌸 DateCock - 당신만의 데이트 코스를 찾아드립니다 🌸</h1>
+<h1 align="center" style="color: #ff69b4;">🌸 DateCock (Spring 버전)- 당신만의 데이트 코스를 찾아드립니다 🌸</h1>
 
 ---
 
