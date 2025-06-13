@@ -32,8 +32,8 @@ DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입
 
 자세한 자료 ( 프로젝트 PPT )
 
-<a href="https://docs.google.com/presentation/d/1E1e6Xc0-W3po5hTQP3lTPNWMQsfQUEbN/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 👈바로 확인 가능한 ppt입니다.  </a>
-<a href="https://docs.google.com/presentation/d/1IQ77WxWi4wxQ2YoMAXzDGI15P80RNm8h/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 👈다운로드 후 자료를 GIF파일로 볼 수 있습니다.</a>
+<a href="https://docs.google.com/presentation/d/1E1e6Xc0-W3po5hTQP3lTPNWMQsfQUEbN/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 프로젝트 PPT [ GIF버전 ]  </a> 다운로드 후 자료를 GIF파일로 볼 수 있습니다. <br>
+<a href="https://docs.google.com/presentation/d/1IQ77WxWi4wxQ2YoMAXzDGI15P80RNm8h/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 프로젝트 PPT [ 사진버전 ] </a> 다운로드 없이 자료를 확인하실 수 있습니다.
 
 
 연락처
