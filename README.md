@@ -1,17 +1,29 @@
 <h1 align="center" style="color: #ff69b4;">🌸 DateCock - 당신만의 데이트 코스를 찾아드립니다 🌸</h1>
-프로젝트 소개
+
+---
+
+## 프로젝트 소개
 
 DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입니다.  
-연령대, 지역, 데이트 유형을 선택하면 알맞은 장소를 제안해주며, 예약·후기 기능까지 통합한 풀스택 데이트 추천 서비스 입니다.
-회원가입 및 로그인, 장소 예약, 후기 등록 기능 등을 포함한 웹 서비스로, 사용자 편의성과 정보 제공을 동시에 고려해 설계되었습니다.
+연령대, 지역, 데이트 유형을 선택하면 알맞은 장소를 제안해주며,  
+예약·후기 기능까지 통합한 풀스택 데이트 추천 서비스입니다.  
+회원가입 및 로그인, 장소 예약, 후기 등록 기능 등을 포함한 웹 서비스로,  
+사용자 편의성과 정보 제공을 동시에 고려해 설계되었습니다.
 
-프로젝트 정보
+---
 
-- 개발 기간: 2025.04.09 ~ 2025.05.16 ( 5주 )
-- 팀 구성: 4인 팀 프로젝트
-- 담당 역할: 팀장
+## 프로젝트 정보
 
- 프로젝트 기여
+| 항목 | 내용 |
+|------|------|
+| 개발 기간 | 2025.04.09 ~ 2025.05.16 (5주) |
+| 팀 구성 | 4인 팀 프로젝트 |
+| 담당 역할 | 팀장 (전체 설계 및 핵심 기능 구현 주도) |
+
+---
+
+## 프로젝트 기여
+
 - 프로젝트 기획 및 전체 아키텍처 설계
 - MyBatis 기반 데이터베이스 설계 및 Mapper XML 구성
 - JSP와 JSTL을 활용한 UI 구성 및 페이지 개발
@@ -25,22 +37,25 @@ DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입
 - 관리자용 방문자 수 통계 기능 구현
 - PPT 자료 구성 및 발표 준비 진행
 
-  프로젝트 시연
+---
 
+## 프로젝트 시연  
+(편집 중인 영상은 추후 삽입 예정)
 
+---
 
+## 자세한 자료 (프로젝트 PPT)
 
-자세한 자료 ( 프로젝트 PPT )
+| 버전 | 설명 | 링크 |
+|------|------|------|
+| GIF버전 | 다운로드 후 GIF 형식으로 시청 가능 | [PPT 보기](https://docs.google.com/presentation/d/1E1e6Xc0-W3po5hTQP3lTPNWMQsfQUEbN/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true) |
+| 사진버전 | 다운로드 없이 이미지로 확인 가능 | [PPT 보기](https://docs.google.com/presentation/d/1IQ77WxWi4wxQ2YoMAXzDGI15P80RNm8h/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true) |
 
-<a href="https://docs.google.com/presentation/d/1E1e6Xc0-W3po5hTQP3lTPNWMQsfQUEbN/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 프로젝트 PPT [ GIF버전 ]  </a> 다운로드 후 자료를 GIF파일로 볼 수 있습니다. <br>
-<a href="https://docs.google.com/presentation/d/1IQ77WxWi4wxQ2YoMAXzDGI15P80RNm8h/edit?usp=sharing&ouid=116873576163210222054&rtpof=true&sd=true"> 프로젝트 PPT [ 사진버전 ] </a> 다운로드 없이 자료를 확인하실 수 있습니다.
+---
 
+## 연락처
 
-연락처
-이름: 박동인  
-이메일: ehddls0318@gmail.com , ehddls147@naver.com
+| 이름 | 이메일 |
+|------|--------|
+| 박동인 | ehddls0318@gmail.com / ehddls147@naver.com |
 
-
-  
-
-  
