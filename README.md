@@ -43,7 +43,7 @@ DateCock은 사용자 맞춤형 데이트 코스를 추천해주는 플랫폼입
 
 
 [![시연 영상 보기](https://github.com/user-attachments/assets/9ea93b32-61f9-4d68-b613-1f39a147d33e)](https://drive.google.com/file/d/1q8t6X3UdNsFdWciBhmv8sGW_iLD7Po-r/view?usp=sharing)
-
+이미지를 클릭하시면 동영상을 확인하실 수 있습니다.
 
 ---
 
